@@ -1,0 +1,32 @@
+<!-- Corrected form example -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Sample form
+    <form name="sampleForm" onsubmit="return validate()">
+        <input type="text" name="firstname">
+        <input type="checkbox" name="checkme">
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        /* Function for validation */
+        function validate() {
+            var firstname = document.forms["sampleForm"]["firstname"].value;
+            var checkme = document.forms["sampleForm"]["checkme"].checked;
+            if (firstname === '' || !checkme) {
+                if (firstname === '') {
+                    alert("Name must be filled out");
+                } else {
+                    alert("Please check the box");
+                }
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
